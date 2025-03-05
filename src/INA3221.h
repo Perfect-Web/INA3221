@@ -69,7 +69,7 @@ typedef enum {
     INA3221_REG_PWR_VALID_HI_LIM,
     INA3221_REG_PWR_VALID_LO_LIM,
     INA3221_REG_MANUF_ID = 0xFE,
-    INA3221_REG_DIE_ID   = 0xFF
+    _INA3221_REG_DIE_ID   = 0xFF
 } ina3221_reg_t;
 
 // Conversion times
