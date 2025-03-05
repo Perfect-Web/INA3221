@@ -194,41 +194,41 @@ void INA3221::setCurrentSumAlertLimit(int16_t currentmA) {
 void INA3221::setWarnAlertLatchEnable() {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     masken_reg.warn_alert_latch_en = 1;
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
 void INA3221::setWarnAlertLatchDisable() {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     masken_reg.warn_alert_latch_en = 1;
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
 void INA3221::setCritAlertLatchEnable() {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     masken_reg.crit_alert_latch_en = 1;
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
 void INA3221::setCritAlertLatchDisable() {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     masken_reg.crit_alert_latch_en = 1;
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
 void INA3221::readFlags() {
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&_masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&_masken_reg);
 }
 
 bool INA3221::getTimingCtrlAlertFlag() {
@@ -255,7 +255,7 @@ uint16_t INA3221::getManufID() {
 
 uint16_t INA3221::getDieID() {
     uint16_t id = 0;
-    _read(INA3221_REG_DIE_ID, &id);
+    _read(_INA3221_REG_DIE_ID, &id);
     return id;
 }
 
@@ -356,7 +356,7 @@ void INA3221::setCritAlertCurrentLimit(ina3221_ch_t channel,
 void INA3221::setCurrentSumEnable(ina3221_ch_t channel) {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
 
     switch (channel) {
         case INA3221_CH1:
@@ -370,14 +370,14 @@ void INA3221::setCurrentSumEnable(ina3221_ch_t channel) {
             break;
     }
 
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
 void INA3221::setCurrentSumDisable(ina3221_ch_t channel) {
     masken_reg_t masken_reg;
 
-    _read(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _read(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
 
     switch (channel) {
         case INA3221_CH1:
@@ -391,7 +391,7 @@ void INA3221::setCurrentSumDisable(ina3221_ch_t channel) {
             break;
     }
 
-    _write(INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
+    _write(_INA3221_REG_MASK_ENABLE, (uint16_t *)&masken_reg);
     _masken_reg = masken_reg;
 }
 
